@@ -85,7 +85,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        try (Connection connection = Util.getConnection();
+        try (Connection connection = Util.getConnection(();
              PreparedStatement preparedStatement = connection.prepareStatement(CLEAN_TABLE)) {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

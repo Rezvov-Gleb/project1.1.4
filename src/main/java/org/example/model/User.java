@@ -1,6 +1,13 @@
 package org.example.model;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import jakarta.persistence.*;
+
+import java.util.Objects;
 
 public class User {
 
@@ -20,6 +27,19 @@ public class User {
 
     public User() {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(name, user.name)
+                && Objects.equals(lastName, user.lastName) && Objects.equals(age, user.age);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, lastName, age);
     }
 
     public User(String name, String lastName, Byte age) {

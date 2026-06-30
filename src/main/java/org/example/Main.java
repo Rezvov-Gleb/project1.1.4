@@ -1,8 +1,7 @@
-package jm.task.core.jdbc;
+package org.example;
 
-import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.service.UserService;
-import jm.task.core.jdbc.service.UserServiceImpl;
+import org.example.service.UserService;
+import org.example.service.UserServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
